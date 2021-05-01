@@ -4,12 +4,12 @@
     "dev": "ts-node ./server",
     "prod": "npm run build && npm run prod:serve",
     "// Build for production": "",
-    "build": "npm run build:clean && npm run build:vite && npm run build:prerender",
+    "build": "npm run build:clean && npm run build:vite",
     "build:clean": "rm -rf dist/",
     "build:vite": "vite build && vite build --ssr",
     "build:prerender": "vite-plugin-ssr prerender",
     "// Static serve for production": "",
-    "prod:serve": "serve dist/client/ --listen 3000"
+    "prod:serve": "npm run dev"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -30,5 +30,8 @@
     "vite": "^2.2.3",
     "vite-plugin-mdx": "3.2.2",
     "vite-plugin-ssr": "0.1.0-beta.35"
+  },
+  "volta": {
+    "node": "14.16.1"
   }
 }
